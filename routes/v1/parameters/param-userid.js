@@ -4,6 +4,7 @@ module.exports = function(router) {
 	  // try to get the user details from the User model and attach it to the request object
 	  console.log('param userid called');
 	  req.user = {
+		  id : id,
 		  name: "bob"
 	  }
 	  next();

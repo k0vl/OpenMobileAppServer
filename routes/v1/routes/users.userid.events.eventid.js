@@ -1,23 +1,22 @@
 var express = require('express');
 var router = express.Router();
 
-//listens to call to :user-id and attach req.user
-require('./param_userid')(router);
-
 router.route('/')
 	.get(function(req, res, next) {
 	  var response = {};
 	  
 	  response.path = req.originalUrl;
-	  response.user = req.user.name;
+	  response.message = "for testing only";
+	  response.event = req.event.name;
 	  
 	  res.json(response);
 	})
-	.post(function(req, res, next) {
+	.delete(function(req, res, next) {
 	  var response = {};
 	  
 	  response.path = req.originalUrl;
-	  response.user = req.user.name;
+	  response.message = "user will be disassociated with the event";
+	  response.event = req.event.name;
 	  
 	  res.json(response);
 	})

@@ -4,10 +4,10 @@ var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
-var sqlpool = require('./mysql-pool');
+var sqlpool = require('./util/mysql-pool');
 
 //routes
-var mainRouter = require('./routes/v1/v1_router');
+var mainRouter = require('./routes/v1/v1-router');
 
 var app = express();
 
