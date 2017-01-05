@@ -4,13 +4,9 @@ var router = express.Router();
 /* GET events listing. */
 router.route('/')
 	.post(function(req, res, next){
-		var response = {};
-
-		response.path = req.originalUrl;
-		
 		//TODO:generalize the post params
 		//TODO:automate the query creation with reflection or something
-		var query_object = {
+		var queryObject = {
 			name 	: req.body.name,
 			price 	: req.body.price,
 			address : req.body.address,
@@ -19,20 +15,18 @@ router.route('/')
 		};
 		
 		var query = req.pool.query(
-			'INSERT INTO events SET ?', query_object, function(err, results, fields) {
-			if(err){console.log("err: " + err);}
-			res.json(results);
+			'INSERT INTO events SET ?', queryObject, function(err, results, fields) {
+			if(err)
+				return next(err);
+			res.locals.data = results;
+			res.json(res.locals);
 		});
 		
 		console.log(query.sql);
 	})
 	.get(function(req, res, next){
-		var response = {};
-
-		response.path = req.originalUrl;
-		response.message = "testing only; this should not be accessed during production";
-
-		res.json(response);
+		res.locals.data.description = "testing only; this should not be accessed during production";
+		res.json(res.locals);
 	});
 
 module.exports = router;

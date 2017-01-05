@@ -11,6 +11,11 @@ router.use(
 	require('./routes/index')
 );
 
+router.use(
+	'/auth', 
+	require('./routes/auth')
+);
+
 //user routes
 
 router.use(
