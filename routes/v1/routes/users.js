@@ -6,7 +6,7 @@ var router = express.Router();
 function insert_user(req, res, next, pw_hash){
 	//TODO:generalize the post params
 	//TODO:automate the query creation with reflection or something
-	var query_object = {
+	var queryObject = {
 		last_name 	: req.body.last_name,
 		first_name 	: req.body.first_name,
 		email 		: req.body.email,
@@ -14,10 +14,11 @@ function insert_user(req, res, next, pw_hash){
 		hash		: pw_hash
 	};
 	
-	var query = req.pool.query('INSERT INTO users SET ?', query_object, function(err, results, fields) {
+	var query = req.pool.query('INSERT INTO users SET ?', queryObject, function(err, results, fields) {
 		if(err)
 			return next(err);
-		res.json(results);
+		res.locals.data = results;
+		res.json(res.locals);
 	});
 	
 	console.log(query.sql);

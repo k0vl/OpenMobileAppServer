@@ -5,19 +5,13 @@ var router = express.Router();
 
 /* GET users listing. */
 router.route('/')
-	.get(function(req, res, next) {
-	  var response = {};
-	  
-	  response.path = req.originalUrl;
-	  
-	  res.json(response);
-	})
-	.post(function(req, res, next) {
-	  var response = {};
-	  
-	  response.path = req.originalUrl;
-	  
-	  res.json(response);
-	})
+.get(function(req, res, next) {
+	res.locals.data.description = 'stub';
+	res.json(res.locals);
+})
+.post(function(req, res, next) {
+	res.locals.data.description = 'stub';
+	res.json(res.locals);
+})
 
 module.exports = router;

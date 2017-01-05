@@ -2,23 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 router.route('/')
-	.get(function(req, res, next) {
-	  var response = {};
-	  
-	  response.path = req.originalUrl;
-	  response.message = "get user information";
-	  response.user = req.user.name;
-	  
-	  res.json(response);
-	})
-	.post(function(req, res, next) {
-	  var response = {};
-	  
-	  response.path = req.originalUrl;
-	  response.message = "update user information";
-	  response.user = req.user.name;
-	  
-	  res.json(response);
-	})
+.get(function(req, res, next) {
+	res.locals.data.description = "stub";
+	res.json(res.locals);
+})
+.post(function(req, res, next) {
+	res.locals.data.description = "stub";
+	res.json(res.locals);
+})
 
 module.exports = router;
