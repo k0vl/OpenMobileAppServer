@@ -1,4 +1,5 @@
 var jwt = require('jsonwebtoken');
+const url = require('url'); 
 
 var express = require('express');
 var router = express.Router(); 
@@ -16,7 +17,7 @@ var publicPages = [
 
 router.use(function(req, res, next) {
 	//bypass the auth if it is not private
-	if(publicPages.indexOf(req.originalUrl.toLowerCase()) !== -1){
+	if(publicPages.indexOf(url.parse(req.originalUrl).pathname.toLowerCase()) !== -1){
 		return next();
 	}
 	

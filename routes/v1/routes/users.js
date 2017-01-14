@@ -11,6 +11,8 @@ function insert_user(req, res, next, pw_hash){
 		first_name 	: req.body.first_name,
 		email 		: req.body.email,
 		college 	: req.body.college,
+		gender		: req.body.gender,
+		birthday	: req.body.birthday,//sanitize birthday as date
 		hash		: pw_hash
 	};
 	
@@ -32,6 +34,16 @@ router.route('/')
 		return next(new Error("no email address"));
 	else if(!req.body.password)
 		return next(new Error("no password"));
+	
+	//precheck for duplicate
+	//note: sql also checks, but its hard to parse sql error
+	var query = req.pool.query(
+		'SELECT * FROM users WHERE email = ?', req.body.email, function(err, results, fields) {
+		if(err)
+			return next(err);//handle sql error
+		else if(results.length > 0)
+			return next(new Error("user exists with same email"));
+	});
 	
 	//generate salt and hash asyncly
 	bcrypt.hash(req.body.password, 8, function(err, hash) {
