@@ -7,11 +7,17 @@ router.route('/')
 		//TODO:generalize the post params
 		//TODO:automate the query creation with reflection or something
 		var queryObject = {
-			name 	: req.body.name,
-			price 	: req.body.price,
-			address : req.body.address,
-			city 	: req.body.city,
-			state	: req.body.state
+			name		: req.body.name,
+			price		: req.body.price,
+			address		: req.body.address,
+			address2	: req.body.address2,
+			city 		: req.body.city,
+			state		: req.body.state,
+			is_public	: bool,
+			start_date	: req.body.start_date,
+			start_time	: req.body.start_time,
+			end_date	: req.body.end_date,
+			end_time	: req.body.end_time
 		};
 		
 		var query = req.pool.query(
