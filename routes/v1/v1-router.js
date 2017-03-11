@@ -34,8 +34,8 @@ router.use(
 );
 
 router.use(
-	'/users/:userid/events/:eventid', 
-	require('./routes/users.userid.events.eventid')
+	'/events/:eventid/users/:userid', 
+	require('./routes/events.eventid.users.userid')
 );
 
 //event routes

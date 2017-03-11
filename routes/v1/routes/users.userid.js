@@ -1,24 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
+var modify_user = require('./util/modify').modify_user;
+var find = require('./util/modify').find;
+
 router.route('/')
 .get(function(req, res, next) {
-	var query = req.pool.query(
-		'SELECT * FROM users WHERE id = ?', req.user.id, function(err, results, fields) {
-		if(err)
-			return next(err);//handle sql error
-		else if(results.length != 1)
-			return next(new Error("event not found"));
-		
-		res.locals.data = results[0];
-		res.json(res.locals);
-	});
-	
-	console.log(query.sql);
+	find(req, res, next, 'SELECT * FROM users WHERE id =' + req.pool.escape(req.user.id));
 })
 .post(function(req, res, next) {
-	res.locals.data.description = "stub";
-	res.json(res.locals);
+	modify_user(req, res, next, 'UPDATE users SET ? WHERE id=' + req.pool.escape(req.user.id));
 })
 
 module.exports = router;

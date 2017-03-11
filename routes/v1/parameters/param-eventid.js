@@ -4,8 +4,7 @@ module.exports = function(router) {
 	  // try to get the user details from the event model and attach it to the request object
 	  console.log('param eventid called');
 	  req.event = {
-		  id : id,
-		  name: "party!!!"
+		  id : id
 	  }
 	  next();
 	});

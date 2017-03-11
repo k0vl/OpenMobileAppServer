@@ -1,30 +1,8 @@
 var bcrypt = require('bcryptjs');
-
 var express = require('express');
 var router = express.Router();
 
-function insert_user(req, res, next, pw_hash){
-	//TODO:generalize the post params
-	//TODO:automate the query creation with reflection or something
-	var queryObject = {
-		last_name 	: req.body.last_name,
-		first_name 	: req.body.first_name,
-		email 		: req.body.email,
-		college 	: req.body.college,
-		gender		: req.body.gender,
-		birthday	: req.body.birthday,//sanitize birthday as date
-		hash		: pw_hash
-	};
-	
-	var query = req.pool.query('INSERT INTO users SET ?', queryObject, function(err, results, fields) {
-		if(err)
-			return next(err);
-		res.locals.data = results;
-		res.json(res.locals);
-	});
-	
-	console.log(query.sql);
-}
+var modify_user = require('./util/modify').modify_user;
 
 /* GET users listing. */
 router.route('/')
@@ -43,12 +21,11 @@ router.route('/')
 		else if(results.length > 0)
 			return next(new Error("user exists with same email"));
 		
-		
 		//generate salt and hash asyncly
 		bcrypt.hash(req.body.password, 8, function(err, hash) {
 			if(err)
 				return next(err);
-			insert_user(req, res, next, hash);
+			modify_user(req, res, next, 'INSERT INTO users SET ?, hash=' + req.pool.escape(hash));
 		});
 	});
 })

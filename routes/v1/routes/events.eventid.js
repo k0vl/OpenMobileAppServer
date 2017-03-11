@@ -1,8 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
+var modify = require('./util/modify').modify;
+var modify_event = require('./util/modify').modify_event;
+
 router.route('/')
 .get(function(req, res, next) {
+	//TODO: refactor with modify
 	var query = req.pool.query(
 		'SELECT * FROM events WHERE id = ?', req.event.id, function(err, results, fields) {
 		if(err)
@@ -17,16 +21,10 @@ router.route('/')
 	console.log(query.sql);
 })
 .delete(function(req, res, next) {//TODO: varify the user owns the event
-	var query = req.pool.query(
-		'DELETE FROM events WHERE id = ?', req.event.id, function(err, results, fields) {
-		if(err)
-			return next(err);//handle sql error
-		
-		res.locals.data = results;
-		res.json(res.locals);
-	});
-	
-	console.log(query.sql);
+	modify(req, res, next, 'DELETE FROM events WHERE id =' + req.pool.escape(req.event.id));
+})
+.post(function(req, res, next) {
+	modify_event(req, res, next, 'UPDATE events SET ? WHERE id=' + req.pool.escape(req.event.id));
 })
 
 module.exports = router;
