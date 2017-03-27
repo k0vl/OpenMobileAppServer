@@ -43,6 +43,7 @@ router.route('/')
 					);
 					
 					res.locals.data.jwt = token;
+					res.locals.data.id = results[0].id;
 					return res.json(res.locals);
 				}
 				else{
