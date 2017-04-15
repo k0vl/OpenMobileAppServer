@@ -10,7 +10,7 @@ router.route('/')
 .all(function (req, res, next) {
 	
 	var fb_token = req.body.fb_token || req.query.fb_token;
-	if(!fb_token) return next(new Error("no email address"));
+	if(!fb_token) return next(new Error("no fb_token"));
     
     var app_id = "365331850489454";
     var app_secret = "1e20adbb45b3d6f97b47a974812ac470";
@@ -24,13 +24,18 @@ router.route('/')
         var str = '';
         response.on('data', function (chunk) {str += chunk;});
         response.on('end', function () {
-            //var FB_res = JSON.parse(str);
-            console.log(str);
+            var FB_res = JSON.parse(str);
+
+            if(!FB_res.data.is_valid)
+                return next(new Error(FB_res.data.error.code + ':' + FB_res.data.error.message));
+
+            res.locals.data.fb_data = FB_res.data;
+		    res.json(res.locals);
         });
     });
 
     FB_req.on('error', function(e) {
-        console.log('error with request to Facebook: ' + e.message);
+        return next(new Error('error with request to Facebook: ' + e.message));
     });
 
     FB_req.end();
