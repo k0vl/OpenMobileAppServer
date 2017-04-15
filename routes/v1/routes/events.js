@@ -6,8 +6,7 @@ var modify_event = require('./util/modify').modify_event;
 /* GET events listing. */
 router.route('/')
 	.post(function(req, res, next){
-		//TODO:generalize the post params
-		//TODO:automate the query creation with reflection or something
+		//TODO:add the user as host
 		
 		modify_event(req, res, next, 'INSERT INTO events SET ?');
 	})
