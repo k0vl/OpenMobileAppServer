@@ -1,5 +1,4 @@
 var https = require('https');
-var res_login = require('./util/res-login');
 
 var express = require('express');
 var router = express.Router();
@@ -11,7 +10,7 @@ router.route('/')
 	
 	var fb_token = req.body.fb_token || req.query.fb_token;
 	if(!fb_token) return next(new Error("no fb_token"));
-
+    
     var FB_options = {
         hostname: 'graph.facebook.com',
         path: '/debug_token?access_token=' + req.app.get('fb-app-id') +'|'+ req.app.get('fb-app-secret') + '&input_token=' + fb_token
@@ -23,20 +22,8 @@ router.route('/')
         response.on('end', function () {
             var FB_res = JSON.parse(str);
 
-            if(!FB_res.data.is_valid)
-                return next(new Error(FB_res.data.error.code + ':' + FB_res.data.error.message));
-            else if(FB_res.data.application != "Plug")
-                return next(new Error( "token not for Plug app (application:" + FB_res.data.application + ")" ));
-
-            var query = req.pool.query(
-                'SELECT * FROM users WHERE fb_id = ?', [FB_res.data.user_id], 
-                function on_sql_return(err, results, fields){
-                    if(err)
-                        return next(err);//handle sql error
-                    else if(results.length != 1)
-                        return next(new Error("user not found"));
-                    res_login(results[0], req, res);
-            });
+            res.locals.data = FB_res.data;
+            return res.json(res.locals);
         });
     });
 

@@ -6,12 +6,13 @@ var router = express.Router();
 
 // route middleware to verify a token
 
-//TODO:dynamically set the sersion
+//NOTE:always enter lowercase!!!!!!!
 var publicPages = [
 	"/v1",//test page
 	"/v1/v7mown2dj6bf",//404 test page
 	"/v1/auth",
 	"/v1/fbauth",
+	"/v1/checkfbtoken",
 	"/v1/users"//temp
 ];
 

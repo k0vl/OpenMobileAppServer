@@ -1,6 +1,6 @@
 //'INSERT INTO users SET ?'
 
-function modify_and_respond(req, res, next, queryString, queryObject){
+function custom_query(req, res, next, queryString, queryObject){
 	//TODO:generalize the post params
 	//TODO:automate the query creation with reflection or something
 	var query = req.pool.query(queryString, queryObject, function(err, results, fields) {
@@ -11,7 +11,7 @@ function modify_and_respond(req, res, next, queryString, queryObject){
 	console.log(query.sql);
 }
 
-function find_and_respond(req, res, next, queryString, queryObject) {
+function custom_query_1_row(req, res, next, queryString, queryObject) {
 	var query = req.pool.query(queryString, queryObject, function(err, results, fields) {
 		if(err) {return next(err);}
 		else if(results.length != 1)
@@ -29,9 +29,11 @@ module.exports.modify_user = function modify_user(req, res, next, queryString){
 		email 		: req.body.email,
 		college 	: req.body.college,
 		gender		: req.body.gender,
-		birthday	: req.body.birthday//sanitize birthday as date
+		birthday	: req.body.birthday,//sanitize birthday as date
+		fb_token 	: req.body.fb_token, 
+		fb_id		: req.body.fb_id
 	};
-	modify_and_respond(req, res, next, queryString, queryObjectUser);
+	custom_query(req, res, next, queryString, queryObjectUser);
 }
 
 module.exports.modify_event = function modify_event(req, res, next, queryString){
@@ -48,8 +50,8 @@ module.exports.modify_event = function modify_event(req, res, next, queryString)
 		end_date	: req.body.end_date,
 		end_time	: req.body.end_time
 	};
-	modify_and_respond(req, res, next, queryString, queryObjectEvent);
+	custom_query(req, res, next, queryString, queryObjectEvent);
 }
 
-module.exports.modify = modify_and_respond;
-module.exports.find = find_and_respond;
+module.exports.modify = custom_query;
+module.exports.find = custom_query_1_row;

@@ -1,5 +1,5 @@
 var bcrypt = require('bcryptjs');
-var jwt = require('jsonwebtoken');
+var res_login = require('./util/res-login');
 
 var express = require('express');
 var router = express.Router();
@@ -31,20 +31,7 @@ router.route('/')
 				if(err)
 					return next(err);
 				if(hashRes == true){
-					//successful login
-					console.log("user " + email + " logged in.");
-					
-					//TODO: protect against replay attack by including jti?
-					//TODO: protect against reverse engineering by using public-private key auth?
-					var token = jwt.sign(
-						{ user_id: results[0].id }, 
-						req.app.get('jwt-secret'),
-						{ expiresIn: '30 days' }
-					);
-					
-					res.locals.data.jwt = token;
-					res.locals.data.id = results[0].id;
-					return res.json(res.locals);
+					res_login(results[0], req, res);
 				}
 				else{
 					//failed login

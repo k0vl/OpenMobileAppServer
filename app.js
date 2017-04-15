@@ -16,6 +16,8 @@ var app = express();
 app.set('json spaces', 2);//if not set, the json will minify
 app.set('env', 'development');//remove in production
 app.set('jwt-secret', 'IvFxQ97ruUCV8OZC');
+app.set('fb-app-id', '365331850489454');
+app.set('fb-app-secret', '1e20adbb45b3d6f97b47a974812ac470');
 app.set('version', '/v1');
 
 app.use(logger('dev'));

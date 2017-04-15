@@ -12,6 +12,11 @@ router.use(
 );
 
 router.use(
+	'/checkFBtoken', 
+	require('./routes/checkFBtoken')
+);
+
+router.use(
 	'/auth', 
 	require('./routes/auth')
 );
