@@ -16,6 +16,11 @@ router.use(
 	require('./routes/auth')
 );
 
+router.use(
+	'/FBauth', 
+	require('./routes/FBauth')
+);
+
 //user routes
 
 router.use(

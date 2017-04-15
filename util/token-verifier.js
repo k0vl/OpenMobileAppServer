@@ -11,7 +11,7 @@ var publicPages = [
 	"/v1",//test page
 	"/v1/v7mown2dj6bf",//404 test page
 	"/v1/auth",
-	"/v1/fb_oauth",
+	"/v1/FBauth",
 	"/v1/users"//temp
 ];
 
