@@ -1,6 +1,6 @@
 //'INSERT INTO users SET ?'
 
-function custom_query(req, res, next, queryString, queryObject){
+module.exports.custom_query_all = function (req, res, next, queryString, queryObject){
 	//TODO:generalize the post params
 	//TODO:automate the query creation with reflection or something
 	var query = req.pool.query(queryString, queryObject, function(err, results, fields) {
@@ -11,7 +11,7 @@ function custom_query(req, res, next, queryString, queryObject){
 	console.log(query.sql);
 }
 
-function custom_query_1_row(req, res, next, queryString, queryObject) {
+module.exports.custom_query_1_row = function (req, res, next, queryString, queryObject) {
 	var query = req.pool.query(queryString, queryObject, function(err, results, fields) {
 		if(err) {return next(err);}
 		else if(results.length != 1)
@@ -22,7 +22,16 @@ function custom_query_1_row(req, res, next, queryString, queryObject) {
 	console.log(query.sql);
 }
 
-module.exports.modify_user = function modify_user(req, res, next, queryString){
+module.exports.custom_query_1_col = function(req, res, next, queryString, queryObject, columnName) {
+	var query = req.pool.query(queryString, queryObject, function(err, results, fields) {
+		if(err) {return next(err);}
+		res.locals.data = results.map( function(item) {return item[columnName];} );
+		res.json(res.locals);
+	});
+	console.log(query.sql);
+}
+
+module.exports.modify_user = function (req, res, next, queryString){
 	var queryObjectUser = {
 		last_name 	: req.body.last_name,
 		first_name 	: req.body.first_name,
@@ -36,7 +45,7 @@ module.exports.modify_user = function modify_user(req, res, next, queryString){
 	custom_query(req, res, next, queryString, queryObjectUser);
 }
 
-module.exports.modify_event = function modify_event(req, res, next, queryString){
+module.exports.modify_event = function (req, res, next, queryString){
 	var queryObjectEvent = {
 		name		: req.body.name,
 		price		: req.body.price,
@@ -52,6 +61,3 @@ module.exports.modify_event = function modify_event(req, res, next, queryString)
 	};
 	custom_query(req, res, next, queryString, queryObjectEvent);
 }
-
-module.exports.modify = custom_query;
-module.exports.find = custom_query_1_row;

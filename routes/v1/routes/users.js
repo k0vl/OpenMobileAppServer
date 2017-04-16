@@ -2,7 +2,7 @@ var bcrypt = require('bcryptjs');
 var express = require('express');
 var router = express.Router();
 
-var modify_user = require('./util/modify').modify_user;
+var modify = require('./util/modify');
 
 /* GET users listing. */
 router.route('/')
@@ -25,7 +25,7 @@ router.route('/')
 		bcrypt.hash(req.body.password, 8, function(err, hash) {
 			if(err)
 				return next(err);
-			modify_user(req, res, next, 'INSERT INTO users SET ?, hash=' + req.pool.escape(hash));
+			modify.modify_user(req, res, next, 'INSERT INTO users SET ?, hash=' + req.pool.escape(hash));
 		});
 	});
 })
