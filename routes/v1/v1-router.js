@@ -5,6 +5,8 @@ require('./parameters/param-eventid')(router);
 
 require('./parameters/param-userid')(router);
 
+require('./parameters/param-userid2')(router);
+
 //TODO: try automate this with fs module
 router.use(
 	'/', 
@@ -43,9 +45,21 @@ router.use(
 	require('./routes/users.userid.events')
 );
 
+//following routes
+
 router.use(
-	'/events/:eventid/users/:userid', 
-	require('./routes/events.eventid.users.userid')
+	'/users/:userid/followings', 
+	require('./routes/users.userid.followings')
+);
+
+router.use(
+	'/users/:userid/followers', 
+	require('./routes/users.userid.followers')
+);
+
+router.use(
+	'/users/:userid/followings/:userid2', 
+	require('./routes/users.userid.followings.userid')
 );
 
 //event routes
@@ -63,6 +77,11 @@ router.use(
 router.use(
 	'/events/:eventid/users', 
 	require('./routes/events.eventid.users')
+);
+
+router.use(
+	'/events/:eventid/users/:userid', 
+	require('./routes/events.eventid.users.userid')
 );
 
 module.exports = router;
