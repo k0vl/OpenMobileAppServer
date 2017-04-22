@@ -42,7 +42,7 @@ module.exports.modify_user = function (req, res, next, queryString){
 		fb_token 	: req.body.fb_token, 
 		fb_id		: req.body.fb_id
 	};
-	custom_query(req, res, next, queryString, queryObjectUser);
+	module.exports.custom_query_all(req, res, next, queryString, queryObjectUser);
 }
 
 module.exports.modify_event = function (req, res, next, queryString){
@@ -59,5 +59,5 @@ module.exports.modify_event = function (req, res, next, queryString){
 		end_date	: req.body.end_date,
 		end_time	: req.body.end_time
 	};
-	custom_query(req, res, next, queryString, queryObjectEvent);
+	module.exports.custom_query_all(req, res, next, queryString, queryObjectEvent);
 }
