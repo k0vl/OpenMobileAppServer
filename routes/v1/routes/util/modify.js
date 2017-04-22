@@ -32,32 +32,20 @@ module.exports.custom_query_1_col = function(req, res, next, queryString, queryO
 }
 
 module.exports.modify_user = function (req, res, next, queryString){
-	var queryObjectUser = {
-		last_name 	: req.body.last_name,
-		first_name 	: req.body.first_name,
-		email 		: req.body.email,
-		college 	: req.body.college,
-		gender		: req.body.gender,
-		birthday	: req.body.birthday,//sanitize birthday as date
-		fb_token 	: req.body.fb_token, 
-		fb_id		: req.body.fb_id
-	};
-	module.exports.custom_query_all(req, res, next, queryString, queryObjectUser);
+	var userFields = ["last_name", "first_name", "email", "college", "gender", "birthday", "fb_token", "fb_id"];
+	var queryObject = {};
+	userFields.forEach(function(field){
+		if(req.body[field]) queryObject[field] = req.body[field];
+	});
+	module.exports.custom_query_all(req, res, next, queryString, queryObject);
 }
 
 module.exports.modify_event = function (req, res, next, queryString){
-	var queryObjectEvent = {
-		name		: req.body.name,
-		price		: req.body.price,
-		address		: req.body.address,
-		address2	: req.body.address2,
-		city 		: req.body.city,
-		state		: req.body.state,
-		is_public	: req.body.is_public,
-		start_date	: req.body.start_date,
-		start_time	: req.body.start_time,
-		end_date	: req.body.end_date,
-		end_time	: req.body.end_time
-	};
-	module.exports.custom_query_all(req, res, next, queryString, queryObjectEvent);
+	var eventFields = ["name", "price", "address", "address2", "city", "state", "is_public",
+						"start_date", "start_time", "end_date", "end_time"];
+	var queryObject = {};
+	eventFields.forEach(function(field){
+		if(req.body[field]) queryObject[field] = req.body[field];
+	});
+	module.exports.custom_query_all(req, res, next, queryString, queryObject);
 }
