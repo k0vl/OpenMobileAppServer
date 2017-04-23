@@ -41,7 +41,7 @@ module.exports.modify_user = function (req, res, next, queryString){
 }
 
 module.exports.modify_event = function (req, res, next, queryString){
-	var eventFields = ["name", "price", "address", "address2", "city", "state", "is_public",
+	var eventFields = ["name", "emoji", "price", "address", "city", "state", "lat", "lng", "is_public",
 						"start_date", "start_time", "end_date", "end_time"];
 	var queryObject = {};
 	eventFields.forEach(function(field){

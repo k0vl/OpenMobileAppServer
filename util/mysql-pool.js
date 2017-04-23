@@ -5,7 +5,8 @@ var pool = mysql.createPool({
   host            : 'localhost',
   user            : 'u_open_server',
   password        : 'da1ff6442e36a1d023aaeb98f1ca10de',
-  database        : 'open_server'
+  database        : 'open_server',
+  charset         : 'utf8mb4'
 });
 
 //inject database conenction as req.pool
