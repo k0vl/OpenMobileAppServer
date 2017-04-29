@@ -7,6 +7,7 @@ module.exports = function(err, req, res, next) {
 	return next(err)
   }
   
+  console.error(err.stack);
   res.locals.status = "error";
   res.locals.message = err.message;
   res.locals.error = err;
