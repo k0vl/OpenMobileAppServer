@@ -11,23 +11,19 @@ var storage = multer.diskStorage({
     cb(null, nPath)
   },
   filename: function (req, file, cb) {
-    cb(null, req.user.id + path.extname(file.originalname))
+    cb(null, req.user.id + '.jpg')//path.extname(file.originalname)
   }
 })
 var upload = multer({ storage: storage })
 
-/* GET users listing. */
 router.route('/')
-.post(
-//    function(req, res, next){
-//        
-//    },
-    upload.single('profile-photo'),
-    function(req, res, next){
+.get(function(req, res, next){
+        res.sendFile(path.join(nPath, req.user.id + '.jpg'));
+})
+.post(upload.single('profile-photo'), function(req, res, next){
         if(!req.file) return next(new Error("no file provided"));
         res.locals.data = req.file;
         return res.json(res.locals);
-    }
-);
+});
 
 module.exports = router;
