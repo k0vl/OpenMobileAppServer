@@ -41,6 +41,11 @@ router.use(
 );
 
 router.use(
+	'/users/:userid/profile-photo', 
+	require('./routes/users.userid.profile-photo')
+);
+
+router.use(
 	'/users/:userid/events', 
 	require('./routes/users.userid.events')
 );

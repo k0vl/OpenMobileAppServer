@@ -9,6 +9,7 @@ module.exports = function(err, req, res, next) {
   
   res.locals.status = "error";
   res.locals.message = err.message;
+  res.locals.error = err;
   res.locals.data = undefined; //100x faster than delete, but does not cleanup hashmap
   res.status(err.status || 500).json(res.locals);
 }
