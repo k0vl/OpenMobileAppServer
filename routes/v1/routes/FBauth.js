@@ -22,7 +22,9 @@ router.route('/')
         response.on('data', function (chunk) {str += chunk;});
         response.on('end', function () {
             var FB_res = JSON.parse(str);
-
+            
+            if(FB_res.error)
+                return next(new Error(FB_res.error.code + ':' + FB_res.error.message));
             if(!FB_res.data.is_valid)
                 return next(new Error(FB_res.data.error.code + ':' + FB_res.data.error.message));
             else if(FB_res.data.application != "Plug")
