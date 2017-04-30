@@ -22,7 +22,7 @@ router.route('/')
         response.on('end', function () {
             var FB_res = JSON.parse(str);
 
-            res.locals.data = FB_res.data;
+            res.locals.fb_res = FB_res;
             return res.json(res.locals);
         });
     });
