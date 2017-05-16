@@ -1,0 +1,935 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Open Server",
+		"_postman_id": "84992417-280d-8599-134f-cf6bb8d8d3a9",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create new user",
+			"request": {
+				"url": "{{server}}/v1/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "last_name",
+							"value": "Lasta😋",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "first_name",
+							"value": "Pasta🍝",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "email",
+							"value": "{{$randomInt}}@pasta.org",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "college",
+							"value": "🇮🇹ITALY🇮🇹",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "🥓MEATBALLS!🥓",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "fb_id",
+							"value": "{{fb_token}}",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "gender",
+							"value": "🍲Food🍲",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "upload user profile picture",
+			"request": {
+				"url": "{{server}}/v1/users/15/profile-photo?access_token={{token}}",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "profile-photo",
+							"type": "file",
+							"enabled": true,
+							"src": "spanish.jpg"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create new event",
+			"request": {
+				"url": "{{server}}/v1/events?access_token={{token}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "🔥Launch Party {{$randomInt}}🔥",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "emoji",
+							"value": "🎉",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "price",
+							"value": "{{$randomInt}}",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "address",
+							"value": "{{$randomInt}} Del Playa Dr, Santa Barbara, CA",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "lat",
+							"value": "34.413963",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "lng",
+							"value": "-119.851136",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "is_public",
+							"value": "1",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "start_timestamp",
+							"value": "1494897185",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "end_timestamp",
+							"value": "1494897187",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user authentication",
+			"request": {
+				"url": "{{server}}/v1/auth",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "1000@pasta.org",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "🥓MEATBALLS!🥓",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "FB authentication",
+			"request": {
+				"url": "{{server}}/v1/FBauth",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fb_token",
+							"value": "{{fb_token}}",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "check FB token",
+			"request": {
+				"url": "{{server}}/v1/checkFBtoken",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fb_token",
+							"value": "{{fb_token}}",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add user to event",
+			"request": {
+				"url": "{{server}}/v1/events/5/users/15?access_token={{token}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "relationship",
+							"value": "attending",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "invite user to event",
+			"request": {
+				"url": "{{server}}/v1/events/5/invites/15?access_token={{token}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update user by id",
+			"request": {
+				"url": "{{server}}/v1/users/15?access_token={{token}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "last_name",
+							"value": "fasta",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "first_name",
+							"value": "pasta",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "email",
+							"value": "pasta{{$randomInt}}@farian.org",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "college",
+							"value": "ITALI",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "MEATBALLS!",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "fb_token",
+							"value": "{{fb_token}}",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "fb_id",
+							"value": "{{fb_id}}",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update event by id",
+			"request": {
+				"url": "{{server}}/v1/events/6?access_token={{token}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Launch Party {{$randomInt}}",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "price",
+							"value": "30",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "address",
+							"value": "1111 Del Playa Dr",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "address2",
+							"value": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "city",
+							"value": "Santa Barbara",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "state",
+							"value": "CA",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "is_public",
+							"value": "1",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "start_date",
+							"value": "2017-01-02",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "start_time",
+							"value": "10:00",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "end_date",
+							"value": "",
+							"type": "text",
+							"enabled": false
+						},
+						{
+							"key": "end_time",
+							"value": "",
+							"type": "text",
+							"enabled": false
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "follow an user",
+			"request": {
+				"url": "{{server}}/v1/users/15/followings/14?access_token={{token}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create new notification",
+			"request": {
+				"url": "{{server}}/v1/users/15/notifications?access_token={{token}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "message",
+							"value": "💰 You have won the lottery! 💰",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "type",
+							"value": "totally a scam",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add bestfriend contact",
+			"request": {
+				"url": "{{server}}/v1/users/15/bestfriends?access_token={{token}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "contact",
+							"value": "18008000",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get user by event id",
+			"request": {
+				"url": "{{server}}/v1/events/5/users?access_token={{token}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get events by user id",
+			"request": {
+				"url": "{{server}}/v1/users/15/events?access_token={{token}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get invites by event id",
+			"request": {
+				"url": "{{server}}/v1/events/5/invites?access_token={{token}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get invites by user id",
+			"request": {
+				"url": "{{server}}/v1/users/15/invites?access_token={{token}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get user by id",
+			"request": {
+				"url": "{{server}}/v1/users/15?access_token={{token}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get user profile picture",
+			"request": {
+				"url": "{{server}}/v1/users/15/profile-photo?access_token={{token}}",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "profile-photo",
+							"type": "file",
+							"enabled": true,
+							"src": "spanish.jpg"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get event by id",
+			"request": {
+				"url": "{{server}}/v1/events/4?access_token={{token}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get user followings",
+			"request": {
+				"url": "{{server}}/v1/users/15/followings?access_token={{token}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get user followers",
+			"request": {
+				"url": "{{server}}/v1/users/14/followers?access_token={{token}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get notification by notification id",
+			"request": {
+				"url": "{{server}}/v1/users/15/notifications/1?access_token={{token}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "🔥Launch Party {{$randomInt}}🔥",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "emoji",
+							"value": "🎉",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "price",
+							"value": "{{$randomInt}}",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "address",
+							"value": "{{$randomInt}} Del Playa Dr, Santa Barbara, CA",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "lat",
+							"value": "34.413963",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "lng",
+							"value": "-119.851136",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "is_public",
+							"value": "1",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "start_timestamp",
+							"value": "1494897185",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "end_timestamp",
+							"value": "1494897187",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get bestfriend contact",
+			"request": {
+				"url": "{{server}}/v1/users/15/bestfriends?access_token={{token}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "contact",
+							"value": "18008000",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete event by id",
+			"request": {
+				"url": "{{server}}/v1/events/1?access_token={{token}}",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete user from event",
+			"request": {
+				"url": "{{server}}/v1/events/4/users/15?access_token={{token}}",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "relationship",
+							"value": "attending",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "uninvite user from event",
+			"request": {
+				"url": "{{server}}/v1/events/5/invites/15?access_token={{token}}",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "relationship",
+							"value": "attending",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "unfollow an user",
+			"request": {
+				"url": "{{server}}/v1/users/15/followings/14?access_token={{token}}",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete notification",
+			"request": {
+				"url": "{{server}}/v1/users/15/notifications/1?access_token={{token}}",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "🔥Launch Party {{$randomInt}}🔥",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "emoji",
+							"value": "🎉",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "price",
+							"value": "{{$randomInt}}",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "address",
+							"value": "{{$randomInt}} Del Playa Dr, Santa Barbara, CA",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "lat",
+							"value": "34.413963",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "lng",
+							"value": "-119.851136",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "is_public",
+							"value": "1",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "start_timestamp",
+							"value": "1494897185",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "end_timestamp",
+							"value": "1494897187",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete bestfriend contact",
+			"request": {
+				"url": "{{server}}/v1/users/15/bestfriends?access_token={{token}}",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "contact",
+							"value": "18008000",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

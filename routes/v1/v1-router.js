@@ -7,6 +7,9 @@ require('./parameters/param-userid')(router);
 
 require('./parameters/param-userid2')(router);
 
+require('./parameters/param-notificationid')(router);
+
+
 //TODO: try automate this with fs module
 router.use(
 	'/', 
@@ -46,10 +49,19 @@ router.use(
 );
 
 router.use(
-	'/users/:userid/events', 
-	require('./routes/users.userid.events')
+	'/users/:userid/bestfriends', 
+	require('./routes/users.userid.bestfriends')
 );
 
+router.use(
+	'/users/:userid/notifications', 
+	require('./routes/users.userid.notifications')
+);
+
+router.use(
+	'/users/:userid/notifications/:notificationid', 
+	require('./routes/users.userid.notifications.notificationid')
+);
 //following routes
 
 router.use(
@@ -79,6 +91,8 @@ router.use(
 	require('./routes/events.eventid')
 );
 
+//event and user
+
 router.use(
 	'/events/:eventid/users', 
 	require('./routes/events.eventid.users')
@@ -87,6 +101,28 @@ router.use(
 router.use(
 	'/events/:eventid/users/:userid', 
 	require('./routes/events.eventid.users.userid')
+);
+
+router.use(
+	'/users/:userid/events', 
+	require('./routes/users.userid.events')
+);
+
+//invites
+
+router.use(
+	'/events/:eventid/invites', 
+	require('./routes/events.eventid.invites')
+);
+
+router.use(
+	'/events/:eventid/invites/:userid', 
+	require('./routes/events.eventid.invites.userid')
+);
+
+router.use(
+	'/users/:userid/invites', 
+	require('./routes/users.userid.invites')
 );
 
 module.exports = router;
