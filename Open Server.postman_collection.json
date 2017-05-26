@@ -159,6 +159,18 @@
 							"value": "1494897187",
 							"type": "text",
 							"enabled": true
+						},
+						{
+							"key": "min_age",
+							"value": "18",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "max_age",
+							"value": "21",
+							"type": "text",
+							"enabled": true
 						}
 					]
 				},
@@ -612,6 +624,17 @@
 			"response": []
 		},
 		{
+			"name": "get events by coordinates",
+			"request": {
+				"url": "{{server}}/v1/events/find-events?min_lat=-200&max_lat=200&min_lng=-200&max_lng=200&access_token={{token}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "get user followings",
 			"request": {
 				"url": "{{server}}/v1/users/15/followings?access_token={{token}}",
@@ -711,6 +734,39 @@
 						{
 							"key": "end_timestamp",
 							"value": "1494897187",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get notification by user id",
+			"request": {
+				"url": "{{server}}/v1/users/15/notifications?access_token={{token}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "message",
+							"value": "💰 You have won the lottery! 💰",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "type",
+							"value": "totally a scam",
 							"type": "text",
 							"enabled": true
 						}
