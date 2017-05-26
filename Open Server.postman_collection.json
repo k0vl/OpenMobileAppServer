@@ -592,6 +592,17 @@
 			"response": []
 		},
 		{
+			"name": "get users by keyword",
+			"request": {
+				"url": "{{server}}/v1/users/find-by-keyword?keyword=Past&access_token={{token}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "get user profile picture",
 			"request": {
 				"url": "{{server}}/v1/users/15/profile-photo?access_token={{token}}",
@@ -624,9 +635,20 @@
 			"response": []
 		},
 		{
-			"name": "get events by coordinates",
+			"name": "get events by coordinate",
 			"request": {
-				"url": "{{server}}/v1/events/find-events?min_lat=-200&max_lat=200&min_lng=-200&max_lng=200&access_token={{token}}",
+				"url": "{{server}}/v1/events/find-events-by-corrdinate?min_lat=-200&max_lat=200&min_lng=-200&max_lng=200&access_token={{token}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get events by keyword",
+			"request": {
+				"url": "{{server}}/v1/events/find-by-keyword?keyword=Lan&access_token={{token}}",
 				"method": "GET",
 				"header": [],
 				"body": {},

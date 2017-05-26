@@ -39,6 +39,11 @@ router.use(
 );
 
 router.use(
+	'/users/find-by-keyword', 
+	require('./routes/users.find-by-keyword')
+);
+
+router.use(
 	'/users/:userid', 
 	require('./routes/users.userid')
 );
@@ -87,8 +92,13 @@ router.use(
 );
 
 router.use(
-	'/events/find-events', 
-	require('./routes/events.find-events')
+	'/events/find-by-coordinate', 
+	require('./routes/events.find-by-coordinate')
+);
+
+router.use(
+	'/events/find-by-keyword', 
+	require('./routes/events.find-by-keyword')
 );
 
 router.use(
