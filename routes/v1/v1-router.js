@@ -87,6 +87,11 @@ router.use(
 );
 
 router.use(
+	'/events/find-events', 
+	require('./routes/events.find-events')
+);
+
+router.use(
 	'/events/:eventid', 
 	require('./routes/events.eventid')
 );
