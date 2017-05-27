@@ -11,7 +11,7 @@ router.route('/')
 })
 .post(function(req, res, next) {
 	//both user id and contact are primary keys and cannot be null
-	modify.custom_query_all( req, res, next, 'INSERT INTO best_friend SET ?', {user_id:req.user.id, contact:req.body["contact"]} );
+	modify.custom_query_all( req, res, next, 'INSERT INTO best_friend SET ?', {user_id:req.user.id, name:req.body["name"], contact:req.body["contact"]} );
 })
 .delete(function(req, res, next) {
 	modify.custom_query_all( req, res, next, 'DELETE FROM best_friend WHERE user_id = ? AND contact = ?',  [req.user.id, req.body["contact"]] );
