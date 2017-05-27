@@ -7,7 +7,7 @@ var modify = require('./util/modify');
 router.route('/')
 .get(function(req, res, next){
 	//'SELECT user1_id FROM following WHERE user2_id = ?'  , "user1_id"
-	modify.custom_query_all( req, res, next,  'SELECT contact FROM best_friend WHERE user_id = ?', [req.user.id] );
+	modify.custom_query_all( req, res, next,  'SELECT name, contact FROM best_friend WHERE user_id = ?', [req.user.id] );
 })
 .post(function(req, res, next) {
 	//both user id and contact are primary keys and cannot be null
