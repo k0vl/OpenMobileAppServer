@@ -637,7 +637,7 @@
 		{
 			"name": "get events by coordinate",
 			"request": {
-				"url": "{{server}}/v1/events/find-events-by-corrdinate?min_lat=-200&max_lat=200&min_lng=-200&max_lng=200&access_token={{token}}",
+				"url": "{{server}}/v1/events/find-by-coordinate?min_lat=-200&max_lat=200&min_lng=-200&max_lng=200&start_after=1400000000&end_after=1400000000&access_token={{token}}",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -648,7 +648,7 @@
 		{
 			"name": "get events by keyword",
 			"request": {
-				"url": "{{server}}/v1/events/find-by-keyword?keyword=Lan&access_token={{token}}",
+				"url": "{{server}}/v1/events/find-by-keyword?keyword=Launch&start_after=1400000000&end_after=1400000000&access_token={{token}}",
 				"method": "GET",
 				"header": [],
 				"body": {},
