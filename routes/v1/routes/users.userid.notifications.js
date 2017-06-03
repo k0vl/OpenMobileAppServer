@@ -7,7 +7,7 @@ var modify = require('./util/modify');
 router.route('/')
 .post(function(req, res, next) {
 	//use custom_query_by_array to prevent null insertion problems
-	modify.custom_query_by_array(req, res, next, 'INSERT INTO notification SET user_id=' + req.pool.escape(req.user.id) + ', ?', ["message","type"]);
+	modify.custom_query_by_array(req, res, next, 'INSERT INTO notification SET user_id=' + req.pool.escape(req.user.id) + ', ?', ["type","sender_id","event_id"]);
 })
 .get(function(req, res, next){
 	//'SELECT user1_id FROM following WHERE user2_id = ?'  , "user1_id"

@@ -25,44 +25,37 @@
 						{
 							"key": "last_name",
 							"value": "Lasta😋",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "first_name",
 							"value": "Pasta🍝",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "email",
 							"value": "{{$randomInt}}@pasta.org",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "college",
 							"value": "🇮🇹ITALY🇮🇹",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "🥓MEATBALLS!🥓",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "fb_id",
 							"value": "{{fb_token}}",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "gender",
 							"value": "🍲Food🍲",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						}
 					]
 				},
@@ -82,7 +75,6 @@
 						{
 							"key": "profile-photo",
 							"type": "file",
-							"enabled": true,
 							"src": "spanish.jpg"
 						}
 					]
@@ -109,68 +101,57 @@
 						{
 							"key": "name",
 							"value": "🔥Launch Party {{$randomInt}}🔥",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "emoji",
 							"value": "🎉",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "price",
 							"value": "{{$randomInt}}",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "address",
 							"value": "{{$randomInt}} Del Playa Dr, Santa Barbara, CA",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "lat",
 							"value": "34.413963",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "lng",
 							"value": "-119.851136",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "is_public",
 							"value": "1",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "start_timestamp",
 							"value": "1494897185",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "end_timestamp",
 							"value": "1494897187",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "min_age",
 							"value": "18",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "max_age",
 							"value": "21",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						}
 					]
 				},
@@ -196,14 +177,12 @@
 						{
 							"key": "email",
 							"value": "1000@pasta.org",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "🥓MEATBALLS!🥓",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						}
 					]
 				},
@@ -229,8 +208,7 @@
 						{
 							"key": "fb_token",
 							"value": "{{fb_token}}",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						}
 					]
 				},
@@ -256,8 +234,7 @@
 						{
 							"key": "fb_token",
 							"value": "{{fb_token}}",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						}
 					]
 				},
@@ -283,8 +260,7 @@
 						{
 							"key": "relationship",
 							"value": "attending",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						}
 					]
 				},
@@ -327,44 +303,37 @@
 						{
 							"key": "last_name",
 							"value": "fasta",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "first_name",
 							"value": "pasta",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "email",
 							"value": "pasta{{$randomInt}}@farian.org",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "college",
 							"value": "ITALI",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "MEATBALLS!",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "fb_token",
 							"value": "{{fb_token}}",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "fb_id",
 							"value": "{{fb_id}}",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						}
 					]
 				},
@@ -390,68 +359,59 @@
 						{
 							"key": "name",
 							"value": "Launch Party {{$randomInt}}",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "price",
 							"value": "30",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "address",
 							"value": "1111 Del Playa Dr",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "address2",
 							"value": "",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "city",
 							"value": "Santa Barbara",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "state",
 							"value": "CA",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "is_public",
 							"value": "1",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "start_date",
 							"value": "2017-01-02",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "start_time",
 							"value": "10:00",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "end_date",
 							"value": "",
 							"type": "text",
-							"enabled": false
+							"disabled": true
 						},
 						{
 							"key": "end_time",
 							"value": "",
 							"type": "text",
-							"enabled": false
+							"disabled": true
 						}
 					]
 				},
@@ -479,7 +439,28 @@
 		{
 			"name": "create new notification",
 			"request": {
-				"url": "{{server}}/v1/users/15/notifications?access_token={{token}}",
+				"url": {
+					"raw": "{{server}}/v1/users/15/notifications?access_token={{token}}",
+					"auth": {},
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"15",
+						"notifications"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -492,16 +473,21 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "message",
-							"value": "💰 You have won the lottery! 💰",
-							"type": "text",
-							"enabled": true
-						},
-						{
 							"key": "type",
 							"value": "totally a scam",
-							"type": "text",
-							"enabled": true
+							"type": "text"
+						},
+						{
+							"key": "sender_id",
+							"value": "",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "event_id",
+							"value": "",
+							"description": "",
+							"type": "text"
 						}
 					]
 				},
@@ -527,8 +513,7 @@
 						{
 							"key": "contact",
 							"value": "18008000",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						}
 					]
 				},
@@ -614,7 +599,6 @@
 						{
 							"key": "profile-photo",
 							"type": "file",
-							"enabled": true,
 							"src": "spanish.jpg"
 						}
 					]
@@ -708,56 +692,47 @@
 						{
 							"key": "name",
 							"value": "🔥Launch Party {{$randomInt}}🔥",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "emoji",
 							"value": "🎉",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "price",
 							"value": "{{$randomInt}}",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "address",
 							"value": "{{$randomInt}} Del Playa Dr, Santa Barbara, CA",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "lat",
 							"value": "34.413963",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "lng",
 							"value": "-119.851136",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "is_public",
 							"value": "1",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "start_timestamp",
 							"value": "1494897185",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "end_timestamp",
 							"value": "1494897187",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						}
 					]
 				},
@@ -783,14 +758,12 @@
 						{
 							"key": "message",
 							"value": "💰 You have won the lottery! 💰",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "type",
 							"value": "totally a scam",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						}
 					]
 				},
@@ -816,8 +789,7 @@
 						{
 							"key": "contact",
 							"value": "18008000",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						}
 					]
 				},
@@ -854,8 +826,7 @@
 						{
 							"key": "relationship",
 							"value": "attending",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						}
 					]
 				},
@@ -881,8 +852,7 @@
 						{
 							"key": "relationship",
 							"value": "attending",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						}
 					]
 				},
@@ -925,56 +895,47 @@
 						{
 							"key": "name",
 							"value": "🔥Launch Party {{$randomInt}}🔥",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "emoji",
 							"value": "🎉",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "price",
 							"value": "{{$randomInt}}",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "address",
 							"value": "{{$randomInt}} Del Playa Dr, Santa Barbara, CA",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "lat",
 							"value": "34.413963",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "lng",
 							"value": "-119.851136",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "is_public",
 							"value": "1",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "start_timestamp",
 							"value": "1494897185",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						},
 						{
 							"key": "end_timestamp",
 							"value": "1494897187",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						}
 					]
 				},
@@ -1000,8 +961,7 @@
 						{
 							"key": "contact",
 							"value": "18008000",
-							"type": "text",
-							"enabled": true
+							"type": "text"
 						}
 					]
 				},
