@@ -49,7 +49,7 @@
 						},
 						{
 							"key": "fb_id",
-							"value": "{{fb_token}}",
+							"value": "{{fb_id}}",
 							"type": "text"
 						},
 						{
