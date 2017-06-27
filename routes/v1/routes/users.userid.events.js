@@ -6,8 +6,13 @@ var modify = require('./util/modify');
 
 /* GET users listing. */
 router.route('/')
-.get(function(req, res, next) {
-	modify.custom_query_all(req, res, next, 'SELECT * FROM user_event WHERE user_id = ?' , [req.user.id]);
-})
+.get(function(req, res, next){
+	var queryString = "SELECT events.*, user_event.relationship \
+	FROM events JOIN user_event \
+	ON events.id = user_event.event_id \
+	WHERE user_event.user_id = ?"
+	modify.custom_query_all(req, res, next, queryString, [req.user.id]);
+});
+
 
 module.exports = router;
