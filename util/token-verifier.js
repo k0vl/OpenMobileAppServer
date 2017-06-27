@@ -18,7 +18,7 @@ var publicPages = [
 
 router.use(function(req, res, next) {
 	//bypass the auth if it is not private
-	if(publicPages.indexOf(url.parse(req.originalUrl).pathname.toLowerCase()) !== -1){
+	if(publicPages.indexOf(url.parse(req.originalUrl).pathname.toLowerCase().replace(/\/$/, "")) !== -1){
 		return next();
 	}
 	
