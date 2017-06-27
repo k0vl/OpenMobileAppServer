@@ -67,20 +67,22 @@
 			"name": "upload user profile picture",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15/profile-photo?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}/profile-photo?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15",
+						"{{user_id_1}}",
 						"profile-photo"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -281,21 +283,23 @@
 			"name": "add user to event",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/events/5/users/15?access_token={{token}}",
+					"raw": "{{server}}/v1/events/{{event_id_1}}/users/{{user_id_1}}?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"events",
-						"5",
+						"{{event_id_1}}",
 						"users",
-						"15"
+						"{{user_id_1}}"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -326,21 +330,23 @@
 			"name": "invite user to event",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/events/5/invites/15?access_token={{token}}",
+					"raw": "{{server}}/v1/events/{{event_id_1}}/invites/{{user_id_1}}?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"events",
-						"5",
+						"{{event_id_1}}",
 						"invites",
-						"15"
+						"{{user_id_1}}"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -353,10 +359,7 @@
 						"description": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": ""
 			},
 			"response": []
@@ -365,19 +368,21 @@
 			"name": "update user by id",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15"
+						"{{user_id_1}}"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -438,14 +443,14 @@
 			"name": "update event by id",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/events/6?access_token={{token}}",
+					"raw": "{{server}}/v1/events/{{event_id_1}}?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"events",
-						"6"
+						"{{event_id_1}}"
 					],
 					"query": [
 						{
@@ -544,21 +549,23 @@
 			"name": "follow an user",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15/followings/14?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}/followings/{{user_id_2}}?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15",
+						"{{user_id_1}}",
 						"followings",
-						"14"
+						"{{user_id_2}}"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -571,10 +578,7 @@
 						"description": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": ""
 			},
 			"response": []
@@ -583,14 +587,14 @@
 			"name": "create new notification",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15/notifications?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}/notifications?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15",
+						"{{user_id_1}}",
 						"notifications"
 					],
 					"query": [
@@ -641,20 +645,22 @@
 			"name": "add bestfriend contact",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15/bestfriends?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}/bestfriends?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15",
+						"{{user_id_1}}",
 						"bestfriends"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -685,30 +691,29 @@
 			"name": "get user by event id",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/events/5/users?access_token={{token}}",
+					"raw": "{{server}}/v1/events/{{event_id_1}}/users?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"events",
-						"5",
+						"{{event_id_1}}",
 						"users"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": ""
 			},
 			"response": []
@@ -717,30 +722,29 @@
 			"name": "get events by user id",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15/events?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}/events?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15",
+						"{{user_id_1}}",
 						"events"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": ""
 			},
 			"response": []
@@ -749,30 +753,29 @@
 			"name": "get invites by event id",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/events/5/invites?access_token={{token}}",
+					"raw": "{{server}}/v1/events/{{event_id_1}}/invites?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"events",
-						"5",
+						"{{event_id_1}}",
 						"invites"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": ""
 			},
 			"response": []
@@ -781,30 +784,29 @@
 			"name": "get invites by user id",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15/invites?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}/invites?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15",
+						"{{user_id_1}}",
 						"invites"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": ""
 			},
 			"response": []
@@ -813,29 +815,28 @@
 			"name": "get user by id",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15"
+						"{{user_id_1}}"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": ""
 			},
 			"response": []
@@ -879,20 +880,22 @@
 			"name": "get user profile picture",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15/profile-photo?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}/profile-photo?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15",
+						"{{user_id_1}}",
 						"profile-photo"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -918,14 +921,14 @@
 			"name": "get event by id",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/events/62?access_token={{token}}",
+					"raw": "{{server}}/v1/events/{{event_id_1}}?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"events",
-						"62"
+						"{{event_id_1}}"
 					],
 					"query": [
 						{
@@ -1046,20 +1049,22 @@
 			"name": "get user followings",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15/followings?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}/followings?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15",
+						"{{user_id_1}}",
 						"followings"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -1072,10 +1077,7 @@
 						"description": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": ""
 			},
 			"response": []
@@ -1084,20 +1086,22 @@
 			"name": "get user followers",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/14/followers?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}/followers?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"14",
+						"{{user_id_1}}",
 						"followers"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -1110,10 +1114,7 @@
 						"description": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": ""
 			},
 			"response": []
@@ -1122,21 +1123,23 @@
 			"name": "get notification by notification id",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15/notifications/1?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}/notifications/{{notif_id_1}}?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15",
+						"{{user_id_1}}",
 						"notifications",
-						"1"
+						"{{notif_id_1}}"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -1207,20 +1210,22 @@
 			"name": "get notification by user id",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15/notifications?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}/notifications?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15",
+						"{{user_id_1}}",
 						"notifications"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -1256,20 +1261,22 @@
 			"name": "get bestfriend contact",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15/bestfriends?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}/bestfriends?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15",
+						"{{user_id_1}}",
 						"bestfriends"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -1300,29 +1307,28 @@
 			"name": "delete event by id",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/events/1?access_token={{token}}",
+					"raw": "{{server}}/v1/events/{{event_id_1}}?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"events",
-						"1"
+						"{{event_id_1}}"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
 				},
 				"method": "DELETE",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": ""
 			},
 			"response": []
@@ -1331,21 +1337,23 @@
 			"name": "delete user from event",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/events/4/users/15?access_token={{token}}",
+					"raw": "{{server}}/v1/events/{{event_id_1}}/users/{{user_id_1}}?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"events",
-						"4",
+						"{{event_id_1}}",
 						"users",
-						"15"
+						"{{user_id_1}}"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -1376,21 +1384,23 @@
 			"name": "uninvite user from event",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/events/5/invites/15?access_token={{token}}",
+					"raw": "{{server}}/v1/events/{{event_id_1}}/invites/{{user_id_1}}?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"events",
-						"5",
+						"{{event_id_1}}",
 						"invites",
-						"15"
+						"{{user_id_1}}"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -1421,21 +1431,23 @@
 			"name": "unfollow an user",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15/followings/14?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}/followings/{{user_id_2}}?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15",
+						"{{user_id_1}}",
 						"followings",
-						"14"
+						"{{user_id_2}}"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -1448,10 +1460,7 @@
 						"description": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": ""
 			},
 			"response": []
@@ -1460,21 +1469,23 @@
 			"name": "delete notification",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15/notifications/1?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}/notifications/{{notif_id_1}}?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15",
+						"{{user_id_1}}",
 						"notifications",
-						"1"
+						"{{notif_id_1}}"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
@@ -1545,20 +1556,22 @@
 			"name": "delete bestfriend contact",
 			"request": {
 				"url": {
-					"raw": "{{server}}/v1/users/15/bestfriends?access_token={{token}}",
+					"raw": "{{server}}/v1/users/{{user_id_1}}/bestfriends?access_token={{token}}",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
 						"v1",
 						"users",
-						"15",
+						"{{user_id_1}}",
 						"bestfriends"
 					],
 					"query": [
 						{
 							"key": "access_token",
-							"value": "{{token}}"
+							"value": "{{token}}",
+							"equals": true,
+							"description": ""
 						}
 					],
 					"variable": []
